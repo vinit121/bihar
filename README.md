@@ -1,2 +1,2 @@
 # bihar
-know about bihar
+ know about bihar
