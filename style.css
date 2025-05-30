@@ -1,0 +1,171 @@
+/* Basic Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f4f4f4; /* Fallback color */
+    line-height: 1.6;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding, content wrappers should handle padding */
+    background-image: url(bihar.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh; /* Ensure body takes at least full viewport height for background */
+}
+
+/* Content wrapper to add padding back if needed, and center content */
+.page-content-container {
+    padding: 20px;
+    /* max-width: 1200px; /* Optional: constrain content width */
+    /* margin: 0 auto; /* Optional: center content area */
+    /* background-color: rgba(255,255,255,0.8); /* Optional: semi-transparent background for content over full-page image */
+}
+
+
+/* Styles for header, nav, container, section, footer (if used in future) */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    width: 80%; /* Consider making this 90% or 95% for better use of space */
+    margin: auto;
+    overflow: hidden; /* Useful for containing floats if any are still used, less so with flexbox */
+    padding: 20px 0;
+}
+
+section { /* This class is not currently used on location sections but could be a wrapper for them */
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    /* position: fixed; bottom: 0; width: 100%; */ /* Commented out fixed footer, can overlap content */
+    margin-top: 30px; /* Ensure space before footer */
+}
+
+/* Main Heading (Bihar) */
+.r {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); 
+    text-align: center;
+    font-size: 48px; 
+    color: #222; 
+    margin-bottom: 30px; 
+}
+
+/* Section Headings (e.g., 1. Golghar) */
+.p { 
+    border-bottom: 2px solid #ccc; 
+    padding-bottom: 10px; 
+    margin-top: 30px; 
+    margin-bottom: 20px; /* Increased bottom margin for spacing before content wrapper */
+    font-size: 28px; 
+    color: #444; 
+}
+
+/* Clearfix utility - may not be needed as much with flexbox but keep for now */
+.clearfix::after { /* More robust clearfix */
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Location Content Styling with Flexbox */
+.location-content-wrapper {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between image and text content */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    margin-bottom: 30px; /* Space below each location section */
+    background-color: #fff; /* Optional: give a card-like background */
+    padding: 15px; /* Optional: padding within the wrapper */
+    border-radius: 5px; /* Optional: rounded corners for the card */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: subtle shadow for card effect */
+}
+
+.location-content-wrapper img {
+    /* float: left; */ /* Removed float */
+    margin-right: 0; /* Reset margin, gap handles spacing */
+    max-width: 100%; /* Ensure image is responsive within its flex container */
+    height: auto; 
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    flex: 1 1 300px; /* Flex properties: grow, shrink, basis (min-width before wrapping) */
+    object-fit: cover; /* Ensures image covers the space nicely, might crop */
+    max-height: 400px; /* To prevent very tall images from dominating */
+}
+
+.location-content-wrapper .text-content {
+    flex: 2 1 60%; /* Flex properties: grow (take more space), shrink, basis */
+    display: flex;
+    flex-direction: column; /* Stack p and button groups vertically */
+}
+
+/* Paragraph text style */
+.text-large { 
+    font-size: 16px; 
+    /* line-height: 1.6; */ /* Inherited from body */
+    margin-bottom: 15px; 
+}
+
+/* Button link style for links styled as buttons */
+.button-link { 
+    display: inline-block; 
+    background-color: #007bff; 
+    color: #fff !important; 
+    padding: 10px 15px;
+    text-decoration: none; 
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 8px; /* Space below buttons */
+    margin-right: 8px; /* Space next to buttons if they wrap */
+    text-align: center;
+}
+
+.button-link:hover {
+    background-color: #0056b3; 
+    color: #fff !important;
+}
+
+/* Grouping buttons if needed, or just rely on their individual margins */
+.text-content a { /* Ensures anchor tags themselves don't add underline if button is inside */
+    text-decoration: none;
+}
